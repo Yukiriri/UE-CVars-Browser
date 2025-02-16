@@ -1,0 +1,64 @@
+*
+{
+    font-family: "Cascadia Mono";
+    font-size: 1rem;
+    color: #c0c0c0;
+}
+
+::-webkit-scrollbar
+{
+    width: 1px;
+}
+
+body
+{
+    background-color: #202020;
+}
+
+.container>div:nth-child(1)
+{
+    width: 25%;
+}
+
+.container>div:nth-child(2)
+{
+    width: 75%;
+}
+
+#pcvar-list>div:hover li
+{
+    cursor: pointer;
+}
+
+#si-pattern
+{
+    border: none;
+    background: none;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+#si-pattern:focus
+{
+    outline: none;
+}
+
+#sr-list>*
+{
+    border-bottom: 1px solid #7f7f7f;
+}
+
+#sr-list>*:last-child
+{
+    border-bottom: none;
+}
+
+#sr-list>*>*
+{
+    padding: 0.5rem;
+}
+
+#sr-list>*>*:nth-child(2)
+{
+    color: #ff8844;
+}

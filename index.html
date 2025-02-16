@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Unreal Engine Console Variables and Commands</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./res/bg.css">
+    <script src="./js/cvars/5.5.3-en.js"></script>
+    <script src="./js/cvars/5.4.4-en.js"></script>
+    <script src="./js/cvars/5.3.2-en.js"></script>
+    <script src="./js/cvars/5.2.1-en.js"></script>
+    <script src="./js/cvars/5.1.1-en.js"></script>
+    <script src="./js/cvars/5.0.3-en.js"></script>
+    <script src="./js/cvars/4.27.2-en.js"></script>
+    <script src="./js/cvars/4.26.2-en.js"></script>
+    <script>
+        const _uevList = 
+        [
+            { display: "5.5.3", cvar: cvars553 },
+            { display: "5.4.4", cvar: cvars544 },
+            { display: "5.3.2", cvar: cvars532 },
+            { display: "5.2.1", cvar: cvars521 },
+            { display: "5.1.1", cvar: cvars511 },
+            { display: "5.0.3", cvar: cvars503 },
+            { display: "4.27.2", cvar: cvars4272 },
+            { display: "4.26.2", cvar: cvars4262 },
+        ];
+        const _pcvarList = 
+        [
+            { displayLv: 1, display: "All",                     reg: "" },
+            { displayLv: 1, display: "Rendering",               reg: "^r\\." },
+                { displayLv: 2, display: "Ambient Occlusion",   reg: "^r\\.((DefaultFeature\\.)?AmbientOcclusion|AO)" },
+                { displayLv: 2, display: "Shadow",              reg: "^r\\.Shadow" },
+                { displayLv: 2, display: "Light",               reg: "^r\\.(Sky)?Light" },
+                { displayLv: 2, display: "Reflection",          reg: "^r\\.(Reflection|SSR|SSS)" },
+                { displayLv: 2, display: "Global Illumination", reg: "^r\\.((Dynamic)?GlobalIllumination|SSGI)" },
+                { displayLv: 2, display: "Anti Aliasing",       reg: "^r\\.(DefaultFeature\\.)?AntiAliasing" },
+                    { displayLv: 3, display: "FXAA",            reg: "^r\\.FXAA" },
+                    { displayLv: 3, display: "TAA",             reg: "^r\\.TemporalAA" },
+                    { displayLv: 3, display: "MSAA",            reg: "^r\\.MSAA" },
+                    { displayLv: 3, display: "TSR",             reg: "^r\\.TSR" },
+                { displayLv: 2, display: "Post Process",        reg: "^r\\.PostProcess" },
+                    { displayLv: 3, display: "Tonemapper",      reg: "^r\\.(Tonemapper|SceneColor)" },
+                    { displayLv: 3, display: "Motion Blur",     reg: "^r\\.(DefaultFeature\\.)?MotionBlur" },
+                    { displayLv: 3, display: "Exposure",        reg: "^r\\.((DefaultFeature\\.)?AutoExposure|EyeAdaptation)" },
+                { displayLv: 2, display: "Distance Field",      reg: "^r\\.((Global)?(GenerateMesh)?DistanceField|DF)" },
+                { displayLv: 2, display: "Volumetric",          reg: "^r\\.Volumetric" },
+                { displayLv: 2, display: "Lumen",               reg: "^r\\.Lumen" },
+                { displayLv: 2, display: "Ray Tracing",         reg: "^r\\.RayTracing" },
+                { displayLv: 2, display: "Path Tracing",        reg: "^r\\.PathTracing" },
+                { displayLv: 2, display: "HDR",                 reg: "^r\\.HDR" },
+            { displayLv: 1, display: "FX",                      reg: "^fx\\." },
+            { displayLv: 1, display: "Niagara",                 reg: "^niagara\\." },
+            { displayLv: 1, display: "Animation",               reg: "^a\\." },
+            { displayLv: 1, display: "Streaming",               reg: "^(s\\.|r\\.Streaming)" },
+            { displayLv: 1, display: "Garbage Collection",      reg: "^gc\\." },
+            { displayLv: 1, display: "Networking",              reg: "^net\\." },
+        ];
+    </script>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <div class="bg bg-img"></div>
+    <div class="bg card-mask"></div>
+    <div class="header card-mask col-item">
+        <div></div>
+    </div>
+    <div class="container col-item">
+        <div>
+            <div class="card card-mask">
+                <div class="card-header">UE Version</div>
+                <div class="list" id="uev-list"></div>
+            </div>
+            <div class="card card-mask">
+                <div class="card-header">Search Option</div>
+                <div class="list">
+                    <div><input type="checkbox" id="so-variable"    checked>Variables</div>
+                    <div><input type="checkbox" id="so-command"     checked>Commands</div>
+                    <div><input type="checkbox" id="so-exec"               >Exec</div>
+                    <div><input type="checkbox" id="so-description" checked>Description</div>
+                </div>
+            </div>
+            <div class="card card-mask">
+                <div class="card-header">Popular CVar</div>
+                <div class="list" id="pcvar-list"></div>
+            </div>
+        </div>
+        <div>
+            <div class="card card-mask">
+                <input type="text" placeholder="Search" id="si-pattern">
+            </div>
+            <div class="card card-mask">
+                <div class="list" id="sr-list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
