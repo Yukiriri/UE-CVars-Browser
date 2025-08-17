@@ -1,3 +1,3 @@
-# UECVarsBrowser
-给UE爱好者提供一个人性化的CVar浏览查询页面  
-Provide a user-friendly CVar browsing query page for UE enthusiasts  
+# UE-CVars-Browser
+给UE爱好者提供一个更实用的CVar浏览查询页面  
+Provide UE enthusiasts with a more practical CVar browsing query page  

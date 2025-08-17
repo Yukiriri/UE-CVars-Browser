@@ -1,14 +1,40 @@
-
-.hcenter, body
+:root
 {
-    text-align: center;
+    --bg-mask-color: rgba(0, 0, 0, 0.1);
+    --card-mask-color: rgba(0, 0, 0, 0.5);
+    --card-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0.2rem 0.1rem;
+    --card-blur: blur(4rem);
+    --text-color: #ccc;
+    --listbox-header-border: #777 1px solid;
 }
 
-.col-item
+*
+{
+    font-family: "Cascadia Mono";
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.h-fill
 {
     display: flex;
 }
 
+.h-center
+{
+    text-align: center;
+}
+
+.v-fill
+{
+    display: block;
+}
+
+.v-center
+{
+    display: flex;
+    align-items: center;
+}
 
 body
 {
@@ -16,63 +42,66 @@ body
     box-sizing: border-box;
 }
 
-.bg
+.bg-img,
+.bg-mask
 {
-    z-index: -1;
     position: fixed;
     width: 100%;
     height: 100%;
 }
 
-.header
+.bg-mask
 {
-    padding: 1rem;
+    background-color: var(--bg-mask-color);
 }
 
-.container
+.content-header > *:first-child,
+.content
 {
     margin: auto;
-    max-width: 50%;
+    width: 50%;
 }
 
 .card
 {
-    margin: 1.1rem;
+    margin: 1rem;
     border-radius: 1rem;
     padding: 0.5rem;
     text-align: left;
+    transition: all 0.2s;
 }
 
 .card-mask
 {
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 0px 0.5rem #a0a0a0;
+    backdrop-filter: var(--card-blur);
+    background-color: var(--card-mask-color);
+    box-shadow: var(--card-shadow);
 }
 
-.card-header
+.listbox-header
 {
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #7f7f7f;
+    border-bottom: var(--listbox-header-border);
     padding: 0.25rem;
     font-size: 2rem;
 }
 
-.list>div
+.listbox > div
 {
     padding: 0.25rem;
 }
 
-.list>div>*
+.listbox > div > .lv1
 {
-    max-width: max-content;
+    margin-left: 1rem;
 }
 
-.list>div>.lv2
+.listbox > div > .lv2
 {
     margin-left: 2rem;
 }
 
-.list>div>.lv3
+.listbox > div > .lv3
 {
     margin-left: 4rem;
 }
