@@ -2,7 +2,7 @@
 {
     --bg-mask-color: rgba(0, 0, 0, 0.1);
     --card-mask-color: rgba(0, 0, 0, 0.5);
-    --card-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0.2rem 0.1rem;
+    --card-shadow: rgba(0, 0, 0, 0.8) 0px 0px 1rem;
     --card-blur: blur(4rem);
     --text-color: #ccc;
     --listbox-header-border: #777 1px solid;
